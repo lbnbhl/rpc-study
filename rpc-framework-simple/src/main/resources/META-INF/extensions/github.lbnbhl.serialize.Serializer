@@ -1,0 +1,3 @@
+kyro=github.lbnbhl.serialize.kyro.KryoSerializer
+protostuff=github.lbnbhl.serialize.protostuff.ProtostuffSerializer
+hessian=github.lbnbhl.serialize.hessian.HessianSerializer
