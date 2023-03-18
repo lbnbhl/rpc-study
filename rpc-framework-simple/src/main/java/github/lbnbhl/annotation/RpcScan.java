@@ -2,6 +2,7 @@ package github.lbnbhl.annotation;
 
 import github.lbnbhl.spring.CustomScannerRegistrar;
 import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

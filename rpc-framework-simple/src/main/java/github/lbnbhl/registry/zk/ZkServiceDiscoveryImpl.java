@@ -26,6 +26,7 @@ public class ZkServiceDiscoveryImpl implements ServiceDiscovery {
     private final LoadBalance loadBalance;
 
     public ZkServiceDiscoveryImpl() {
+        //TODO：可以结合spring用配置文件方法设置LoadBalanceEnum.LOADBALANCE.getName()
         this.loadBalance = ExtensionLoader.getExtensionLoader(LoadBalance.class).getExtension(LoadBalanceEnum.LOADBALANCE.getName());
     }
 

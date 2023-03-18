@@ -27,6 +27,7 @@ public class SocketRpcClient implements RpcRequestTransport {
     private final ServiceDiscovery serviceDiscovery;
 
     public SocketRpcClient() {
+        //TODO：可以结合spring用配置文件方法设置ServiceDiscoveryEnum.ZK.getName()
         this.serviceDiscovery = ExtensionLoader.getExtensionLoader(ServiceDiscovery.class).getExtension(ServiceDiscoveryEnum.ZK.getName());
     }
 
@@ -35,6 +36,7 @@ public class SocketRpcClient implements RpcRequestTransport {
         InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest);
         try (Socket socket = new Socket()) {
             socket.connect(inetSocketAddress);
+            //TODO：可使用其他序列化方式
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             // Send data to the server through the output stream
             objectOutputStream.writeObject(rpcRequest);
